@@ -9,21 +9,26 @@
             incorrect: !results[i]
         }"
       >
-        <v-list-item-icon>
-          <v-icon></v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-title v-text="question.description"></v-list-item-title>
+      <v-list-item-avatar>
+        <v-icon v-if="results[i]">mdi-thumb-up</v-icon>
+        <v-icon v-else>mdi-thumb-down</v-icon>
+      </v-list-item-avatar>
+      <v-list-item-content>
+        <v-list-item-title v-html="question.description"></v-list-item-title>
+        <div class="d-flex flex-row">
+          Правильных ответов
+        </div>
         </v-list-item-content>
+        {{percents[i]}}% <v-progress-circular class="ml-1" :value="percents[i]"></v-progress-circular>
       </v-list-item>
     </v-list>
-    <div class="text-center">
+    <div class="text-center mt-10">
       <v-btn
         class="mx-2"
-        fab
         dark
         small
         color="primary"
+        @click="shareVK"
       >
         <v-icon dark>
           mdi-twitter
@@ -31,10 +36,10 @@
       </v-btn>
       <v-btn
         class="mx-2"
-        fab
         dark
         small
         color="primary"
+        @click="shareFB"
       >
         <v-icon dark>
           mdi-facebook
@@ -42,10 +47,10 @@
       </v-btn>
       <v-btn
         class="mx-2"
-        fab
         dark
         small
         color="primary"
+        @click="shareTW"
       >
         <v-icon dark>
           mdi-vk
@@ -60,12 +65,32 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: "ResultsComponent",
+  data: function() {
+    return {
+      percents: [76, 22]
+    }
+  },
   props: {
   },
   computed: {
     ...mapGetters(['results', 'questions']),
   },
   methods: {
+    shareVK () {
+      window.open(`https://vk.com/share.php?url=${document.URL}`, "_blank", 'height=200,width=300')
+    },
+    shareFB () {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${document.URL}`, "_blank", 'height=200,width=300')
+    },
+    shareTW () {
+      window.open(`https://twitter.com/intent/tweet?url=${document.URL}`, "_blank", 'height=200,width=300')
+    }
   }
 };
 </script>
+<style media="screen">
+  .full-width {
+    flex-basis: 100%;
+    width: 100%
+  }
+</style>

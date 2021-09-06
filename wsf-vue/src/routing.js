@@ -12,22 +12,23 @@ const routes = [
     path: '/test',
     component: TestComponent,
     children: [
-    {
-      path: '',
-      redirect: '1'
-    },
-    {
-      path: 'results',
-      component: ResultsComponent
-    },
-    {
-      path: ':id',
-      component:QuestionComponent
-    },
-    {
-      path: '*',
-      redirect: '/1'
-    }]
+      {
+        path: '',
+        redirect: '1'
+      },
+      {
+        path: 'results',
+        component: ResultsComponent
+      },
+      {
+        path: ':id',
+        component:QuestionComponent
+      },
+      {
+        path: '*',
+        redirect: '/1'
+      }
+    ]
   }
 ]
 
