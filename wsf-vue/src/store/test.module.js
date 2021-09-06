@@ -1,36 +1,30 @@
 const state = {
-  header: 'This is a test header',
-  subheader: 'This is a test subheader',
-  description:'This is a long test description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  header: 'Как выглядит насилие?',
+  subheader: 'Пройди тест и узнай, сможешь ли ты помочь ребенку в опасности.',
+  description:'Этот анонимный опрос поможет в исследовании проблемы сексуализированного насилия над детьми.',
   questions: [{
-    description:' this is question 1 description',
+    description:'Фейк или правда?',
+    responce:'Эта фотография распространяется по социальным сетям много лет, но не известно ни одного случая вовлечения детей таким способом. По данным экспертов, работающих с темой сексуализированного насилия над детьми, 80% детей подверглись насилию от людей из ближайшего окружения ребенка.',
+    image:'https://iili.io/ROo7Zx.jpg',
     responces: [{
-      text: 'this is question 1 responce 1',
-      correct: false
-    },{
-      text: 'this is question 1 responce 2',
-      correct: false
-    },{
-      text: 'this is question 1 responce 3',
+      text: 'Фейк',
       correct: true
     },{
-      text: 'this is question 1 responce 4',
+      text: 'Правда',
       correct: false
     }]
   },{
-    description:' this is question 2 description',
+    description:'Как ведет себя ребенок, который подвергается насилию?',
+    responce:'С первого взгляда можно не узнать, что ребенок подвергается сексуальному насилию. Преступники манипулируют ребенком так, что со стороны может показаться, что ничего страшного не происходит, однако, ребенку нужна помощь.',
     responces: [{
-      text: 'this is question 2 responce 1',
+      text: 'Ребенок кричит, плачет, зовет на помощь',
       correct: false
     },{
-      text: 'this is question 2 responce 2',
+      text: 'Ребенок сопротивляется и выражает протест ',
+      correct: false
+    },{
+      text: 'Ребенок ведет себя и выглядит как обычно',
       correct: true
-    },{
-      text: 'this is question 2 responce 3',
-      correct: false
-    },{
-      text: 'this is question 2 responce 4',
-      correct: false
     }]
   }],
   results:[]

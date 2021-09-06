@@ -3,6 +3,11 @@
     <div>
       {{question.description}}
     </div>
+    <img class="image mt-5" v-if="question.image"
+      max-height="500"
+      max-width="100%"
+      :src="question.image"
+    />
     <v-form v-model="valid">
       <v-radio-group v-model='radioGroup'>
         <v-radio
@@ -19,6 +24,9 @@
         ></v-radio>
       </v-radio-group>
     </v-form>
+    <div v-if="responded">
+      {{question.responce}}
+    </div>
     <v-btn
       v-if="!responded"
       @click="respond"
@@ -26,6 +34,7 @@
       Ответить
     </v-btn>
     <v-btn
+      class="mt-10"
       v-else
       @click="nextQuestion"
     >
@@ -84,5 +93,8 @@ export default {
 }
 .incorrect {
   background: rgba(247, 131, 154,0.2);
+}
+.image {
+  max-width: 100%;
 }
 </style>
